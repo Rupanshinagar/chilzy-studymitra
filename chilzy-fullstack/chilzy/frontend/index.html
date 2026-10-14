@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chilzy — AI Study Buddy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>🐶 Chilzy</h1>
+  <div class="sub">apna virtual study pet — track karo, seekho, revise karo</div>
+
+  <div class="card pet">
+    <div class="face" id="face">🐶<span class="accessory" id="accessory"></span></div>
+    <div class="bubble" id="bubble">Hii! Padhai shuru karein? Start the timer and let's go 🐾</div>
+  </div>
+
+  <div class="card">
+    <div class="stats">
+      <div class="stat"><b id="lvl">1</b><span>Level</span></div>
+      <div class="stat"><b id="xp">0</b><span>XP</span></div>
+      <div class="stat"><b id="streak">0</b><span>🔥 Streak</span></div>
+    </div>
+    <div class="xpbar"><div id="xpfill" style="width:0%"></div></div>
+  </div>
+
+  <div class="tabs">
+    <button id="tabStudyBtn" onclick="showTab('study')">Study</button>
+    <button class="off" id="tabNotesBtn" onclick="showTab('notes')">Notes & Quiz</button>
+    <button class="off" id="tabStatsBtn" onclick="showTab('stats')">Progress</button>
+  </div>
+
+  <div id="study">
+    <div class="card">
+      <div class="timer" id="timerDisp">25:00</div>
+      <div class="row">
+        <button onclick="startTimer()" id="startBtn">Start</button>
+        <button class="secondary" onclick="pauseTimer()" id="pauseBtn" disabled>Pause</button>
+        <button class="secondary" onclick="resetTimer()">Reset</button>
+        <button class="secondary" onclick="skipSession()">Skip 😬</button>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button class="ghost" onclick="setMode('work')">📚 Study 25m</button>
+        <button class="ghost" onclick="setMode('break')">☕ Break 5m</button>
+        <label class="small" style="margin-left:10px"><input type="checkbox" id="voiceToggle" onchange="saveVoicePref()"> 🔊 Voice-over</label>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <label class="small">🌐 Language:
+          <select id="langSelect" onchange="setLang()">
+            <option value="hinglish">Hinglish</option>
+            <option value="hindi">हिंदी</option>
+            <option value="english">English</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="notes" class="hidden">
+    <div class="card" id="dailyCard">
+      <b>🌟 Daily Challenge</b>
+      <div id="dailyBox" style="margin-top:8px" class="small">Notes daalo, roz ek naya challenge milega!</div>
+    </div>
+    <div class="card">
+      <div class="small" style="margin-bottom:6px">Paste your notes below, ya PDF upload karo — Chilzy padhega aur yaad rakhega (RAG knowledge base).</div>
+      <textarea id="notesInput" rows="5" placeholder="Paste chapter notes here..."></textarea>
+      <div class="row" style="margin-top:8px"><button onclick="addNotes()">Add to Chilzy's brain 🧠</button><span class="small" id="notesCount" style="align-self:center"></span></div>
+      <div class="row" style="margin-top:8px">
+        <label class="small" style="width:100%">📄 Upload PDF notes:<br><input type="file" id="pdfInput" accept="application/pdf" onchange="handlePdfUpload(event)" style="margin-top:4px"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chatlog" id="chatlog"></div>
+      <input type="text" id="topicInput" placeholder="Topic to explain (e.g. Newton's laws)">
+      <div class="row" style="margin-top:8px">
+        <button onclick="explainTopic()">Explain 💡</button>
+        <button onclick="quizMe()">Quiz me 📝</button>
+        <button class="secondary" onclick="reviseWeak()">Revise weak topics 🔁</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="stats" class="hidden">
+    <div class="card">
+      <b>🎖 Unlocked Badges</b>
+      <div id="badgeList" class="small" style="margin-top:8px">Abhi koi badge nahi — level up karke unlock karo!</div>
+    </div>
+    <div class="card">
+      <b>Weak topics</b>
+      <div id="weakList" class="small" style="margin-top:8px">Koi weak topic nahi abhi — quiz do to pata chalega!</div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
