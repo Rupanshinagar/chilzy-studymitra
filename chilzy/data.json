@@ -1,0 +1,46 @@
+{
+  "level": 1,
+  "xp": 20,
+  "streak": 1,
+  "last_study_date": "2026-10-02",
+  "freeze_used_on": null,
+  "weak_topics": [],
+  "notes": [
+    {
+      "topic": "Newton's Laws",
+      "text": "Newton's first law says an object stays at rest unless acted upon by a force."
+    },
+    {
+      "topic": "Newton's Laws",
+      "text": "Newton's second law relates force, mass and acceleration."
+    },
+    {
+      "topic": "Newton's Laws",
+      "text": "Newton's third law says every action has an equal and opposite reaction."
+    },
+    {
+      "topic": "Newton's Laws",
+      "text": "Newton's first law says an object stays at rest unless acted upon by a force."
+    },
+    {
+      "topic": "Newton's Laws",
+      "text": "Newton's second law relates force, mass and acceleration."
+    },
+    {
+      "topic": "Newton's Laws",
+      "text": "Newton's third law says every action has an equal and opposite reaction."
+    }
+  ],
+  "quiz_history": [
+    {
+      "topic": "Newton's Laws",
+      "correct": true,
+      "date": "2026-10-02"
+    },
+    {
+      "topic": "Newton's Laws",
+      "correct": true,
+      "date": "2026-10-02"
+    }
+  ]
+}
